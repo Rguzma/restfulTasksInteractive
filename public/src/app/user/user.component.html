@@ -1,0 +1,39 @@
+<p>Tasks</p>
+<button (click) = "getTasks()">Get tasks</button>
+
+<div *ngFor = "let varTasks of title">
+    <div>
+        <div>
+            Task title: {{varTasks.title}} 
+            <button (click)=getATask([varTasks._id]) >Show details</button>
+        </div>
+        <div>
+            
+        </div>
+
+
+    </div>
+</div>
+
+<form (submit)="searchATask($event)">
+    <div>
+        <label for="_id">
+            Search your task
+        </label>
+        <input type="text"  id="id"  name="id"/>
+        <button type ="submit">
+            Search
+        </button>
+
+    </div>
+</form>
+
+
+<div *ngIf="singleTask._id">
+    <div>
+        {{singleTask.title}}
+    </div>
+    <div>
+        {{singleTask.description}}
+    </div>
+</div>
